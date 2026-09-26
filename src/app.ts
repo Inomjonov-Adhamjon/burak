@@ -1,5 +1,7 @@
 import express from 'express';
 import path from 'path';
+import router from './router'
+
 // Entrance
 const app = express();
 console.log(__dirname)
@@ -12,6 +14,10 @@ app.use(express.json());
 // Views
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
 // Routers
+app.use('/', router)
+
 
 export default app
