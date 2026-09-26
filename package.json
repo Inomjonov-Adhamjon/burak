@@ -8,7 +8,7 @@
     "dev": "nodemon --exec ts-node src/server.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "train": "nodemon train.js"
+    "train": "ts-node train.ts"
   },
   "author": "MIT",
   "license": "ISC",
