@@ -33,7 +33,7 @@ const memberSchema = new Schema({
     memberAddress: {
         type: String,
     },
-    memberDescription: {
+    memberDesc: {
         type: String,
     },
 
