@@ -1,14 +1,42 @@
+// TASK O:
+
+// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
+
+// yechim
+function calculateSumOfNumbers(arr: any[]) {
+    let sum = 0;
+    for (let ele of arr) {
+        if (typeof ele == "number") {
+            sum += ele
+        }
+    }
+    return sum
+}
+
+
+const result = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+console.log(result)
+
+
+
+
+
+
+
+
+
 // Task N 
 // Shunday function yozing, u string qabul qilsin va string palindrom yani togri 
 // oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
 
 // yechimi:
-function polindromCheck(str: string): boolean {
-    const reversed = str.split("").reverse().join("")
-    return str === reversed
-}
-const result = polindromCheck("dad");
-console.log("result:", result)
+// function polindromCheck(str: string): boolean {
+//     const reversed = str.split("").reverse().join("")
+//     return str === reversed
+// }
+// const result = polindromCheck("dad");
+// console.log("result:", result)
 
 
 
