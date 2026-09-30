@@ -4,7 +4,10 @@ import MemberService from '../modules/Members.service';
 import { LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 
+// Restaurant controller uchun barcha methodlarni saqlaydigan object
 const restaurantController: T = {};
+
+// ==================== Go Home ====================
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
         console.log('goHome')
@@ -14,6 +17,7 @@ restaurantController.goHome = (req: Request, res: Response) => {
     }
 };
 
+// ==================== Get Login ====================
 restaurantController.getLogin = (req: Request, res: Response) => {
     try {
         console.log('getLogin')
@@ -23,6 +27,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
     }
 };
 
+// ==================== Get Signup ====================
 restaurantController.getSignup = (req: Request, res: Response) => {
     try {
         console.log('getSignup')
@@ -32,13 +37,16 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     }
 };
 
+// ==================== Process Login ====================
 restaurantController.processLogin = async (req: Request, res: Response) => {
     try {
         console.log('processLogin')
         console.log("body:", req.body)
         const input: LoginInput = req.body;
 
+        // MemberService clasidan instans / object yaratdik
         const memberService = new MemberService();
+        // Login ma'lumotlarini service ga yuboramiz,  Service userni database'dan topib, passwordni tekshiradi
         const result = await memberService.processLogin(input);
 
         res.send(result);
@@ -48,14 +56,19 @@ restaurantController.processLogin = async (req: Request, res: Response) => {
     }
 };
 
+// ==================== Process Signup ====================
 restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
         console.log('processSignup');
 
+        // req.body ni newMemberga tenglab, memberTypeni RESTAURANT qilib belgilaymiz
         const newMember: MemberInput = req.body;
         newMember.memberType = MemberType.RESTAURANT;
 
+        // MemberService clasidan instans / object yaratdik
         const memberService = new MemberService();
+        // memberService classining processSignup methodiga newMember ni argument qilib berib
+        // qaytgan natijani result ga tenglab oldik
         const result = await memberService.processSignup(newMember);
         res.send(result);
     } catch (err) {
