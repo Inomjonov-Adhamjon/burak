@@ -1,22 +1,49 @@
+// TASK P:
+
+// Parametr sifatida yagona object qabul qiladigan function yozing.
+// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+
+// Yechim:
+function objectToArray(object: Record<string, any>): [string, any][] {
+    return Object.entries(object);
+};
+
+const result = objectToArray({ a: 10, b: 20 });
+console.log(result);
+
+
+// initial yechim:
+// function objectToArray(obj: object) {
+//     const arr = Object.entries(obj);
+//     return arr
+// };
+
+// const result = objectToArray({ a: 10, b: 20 })
+// console.log(result);
+
+
+
+
+
 // TASK O:
 
 // Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
 // Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
 
 // yechim
-function calculateSumOfNumbers(arr: any[]) {
-    let sum = 0;
-    for (let ele of arr) {
-        if (typeof ele == "number") {
-            sum += ele
-        }
-    }
-    return sum
-}
+// function calculateSumOfNumbers(arr: any[]) {
+//     let sum = 0;
+//     for (let ele of arr) {
+//         if (typeof ele == "number") {
+//             sum += ele
+//         }
+//     }
+//     return sum
+// }
 
 
-const result = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
-console.log(result)
+// const result = calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+// console.log(result)
 
 
 
