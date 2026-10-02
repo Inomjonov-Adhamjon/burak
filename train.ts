@@ -4,12 +4,12 @@
 // Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
 
 // Yechim:
-function objectToArray(object: Record<string, any>): [string, any][] {
-    return Object.entries(object);
-};
+// function objectToArray(object: Record<string, any>): [string, any][] {
+//     return Object.entries(object);
+// };
 
-const result = objectToArray({ a: 10, b: 20 });
-console.log(result);
+// const result = objectToArray({ a: 10, b: 20 });
+// console.log(result);
 
 
 // initial yechim:
