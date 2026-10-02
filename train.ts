@@ -1,3 +1,22 @@
+// TASK Q:
+
+// Shunday function yozing, u 2 ta parametrga ega bo'lib
+// birinchisi object, ikkinchisi string bo'lsin.
+// Agar qabul qilinayotgan ikkinchi string, objectning
+// biror bir propertysiga mos kelsa, 'true', aks holda mos kelmasa 'false' qaytarsin.
+
+// yechim:
+function hasProperty(obj: Record<string, any>, str: string): boolean {
+    const keys = Object.keys(obj)
+    return keys.includes(str)
+};
+
+const result = hasProperty({ name: "BMW", model: "M3" }, "model");
+console.log(result)
+
+
+
+
 // TASK P:
 
 // Parametr sifatida yagona object qabul qiladigan function yozing.
