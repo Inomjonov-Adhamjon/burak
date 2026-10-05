@@ -1,3 +1,34 @@
+// TASK R
+
+// Shunday function yozing, u string parametrga ega bo'lsin.
+// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+
+// yechum:
+function calculate(str: string) {
+    const arr = str.split(" ");
+    let store: number = 0
+    for (let element of arr) {
+        if (!isNaN(Number(element))) {
+            store += Number(element)
+        }
+    }
+    return store
+
+};
+
+const result = calculate("1 + 2");
+console.log(result);
+const result2 = calculate("1 + 2 + 5");
+console.log(result2);
+
+
+
+
+
+
+
 // TASK Q:
 
 // Shunday function yozing, u 2 ta parametrga ega bo'lib
@@ -6,13 +37,13 @@
 // biror bir propertysiga mos kelsa, 'true', aks holda mos kelmasa 'false' qaytarsin.
 
 // yechim:
-function hasProperty(obj: Record<string, any>, str: string): boolean {
-    const keys = Object.keys(obj)
-    return keys.includes(str)
-};
+// function hasProperty(obj: Record<string, any>, str: string): boolean {
+//     const keys = Object.keys(obj)
+//     return keys.includes(str)
+// };
 
-const result = hasProperty({ name: "BMW", model: "M3" }, "model");
-console.log(result)
+// const result = hasProperty({ name: "BMW", model: "M3" }, "model");
+// console.log(result)
 
 
 
