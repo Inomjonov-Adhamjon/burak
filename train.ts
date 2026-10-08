@@ -1,3 +1,27 @@
+// TASK S:
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar 
+// orasidagi tushib qolgan sonni topib uni return qilsin
+
+// yechim:
+function missingNumber(arr: number[]): number {
+    const length = arr.length;
+    const sum = length * (length + 1) / 2;
+    let actualSum = 0
+
+    for (let num of arr) {
+        actualSum += num
+    }
+
+    return sum - actualSum
+};
+
+const result = missingNumber([3, 0, 1]);
+console.log(result);
+
+
+
+
 // TASK R
 
 // Shunday function yozing, u string parametrga ega bo'lsin.
@@ -6,22 +30,22 @@
 
 
 // yechum:
-function calculate(str: string) {
-    const arr = str.split(" ");
-    let store: number = 0
-    for (let element of arr) {
-        if (!isNaN(Number(element))) {
-            store += Number(element)
-        }
-    }
-    return store
+// function calculate(str: string) {
+//     const arr = str.split(" ");
+//     let store: number = 0
+//     for (let element of arr) {
+//         if (!isNaN(Number(element))) {
+//             store += Number(element)
+//         }
+//     }
+//     return store
 
-};
+// };
 
-const result = calculate("1 + 2");
-console.log(result);
-const result2 = calculate("1 + 2 + 5");
-console.log(result2);
+// const result = calculate("1 + 2");
+// console.log(result);
+// const result2 = calculate("1 + 2 + 5");
+// console.log(result2);
 
 
 
