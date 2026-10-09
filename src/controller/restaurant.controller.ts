@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import MemberService from '../modules/Members.service';
 import { AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
-import { Message } from '../libs/Errors';
+import Errors, { HttpCode, Message } from "../libs/Errors";
 
 // MemberService clasidan instans / object yaratdik
 const memberService = new MemberService();
@@ -48,9 +48,13 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 restaurantController.processSignup = async (req: AdminRequest, res: Response) => {
     try {
         console.log('processSignup');
+        const file = req.file;
+        if (!file)
+            throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRON)
 
         // req.body ni newMemberga tenglab, memberTypeni RESTAURANT qilib belgilaymiz
         const newMember: MemberInput = req.body;
+        newMember.memberImage = file?.path;
         newMember.memberType = MemberType.RESTAURANT;
 
         // memberService classining processSignup methodiga newMember ni argument qilib berib
@@ -59,7 +63,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
         // Sessions Authentication
         req.session.member = result;
         req.session.save(function () {
-            res.send(result);
+            res.redirect('product/all')
         });
 
     } catch (err) {
@@ -84,7 +88,7 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
         // Sessions Authentication
         req.session.member = result;
         req.session.save(function () {
-            res.send(result);
+            res.redirect('product/all')
         });
 
     } catch (err) {
