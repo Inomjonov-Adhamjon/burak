@@ -36,7 +36,7 @@ class ProductService {
             .exec()
         if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
-
+        console.log("result:", result);
         return result
 
     }
