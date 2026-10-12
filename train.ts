@@ -1,3 +1,28 @@
+// TASK U
+
+// Shunday function tuzing, uni number parametri bo'lsin.
+// Va bu function berilgan parametrgacha, 0'dan boshlab
+// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+
+
+function sumOdds(num: number): number {
+    let count = 0;
+    for (let i = 0; i < num; i++) {
+        if (i % 2 !== 0) {
+            count++
+        }
+
+    }
+    return count
+}
+
+const result = sumOdds(9);
+const result2 = sumOdds(11);
+console.log(result)
+console.log(result2)
+
+
+
 // TASK T
 
 // Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
@@ -5,16 +30,16 @@
 
 
 // yechim:
-function mergeSortedArrays(num1: number[], num2: number[]): number[] {
-    const merge: number[] = num1.concat(num2);
-    const sort: number[] = merge.sort((a, b) => a - b)
+// function mergeSortedArrays(num1: number[], num2: number[]): number[] {
+//     const merge: number[] = num1.concat(num2);
+//     const sort: number[] = merge.sort((a, b) => a - b)
 
-    return sort
-}
+//     return sort
+// }
 
 
-const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
-console.log("result:", result)
+// const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+// console.log("result:", result)
 
 // TASK S:
 
