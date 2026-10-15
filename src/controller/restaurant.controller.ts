@@ -48,6 +48,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 restaurantController.processSignup = async (req: AdminRequest, res: Response) => {
     try {
         console.log('processSignup');
+        console.log(req.body)
         const file = req.file;
         if (!file)
             throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRON)
@@ -114,6 +115,8 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
     }
 };
 
+// ==================== getUsers ====================
+
 restaurantController.getUsers = async (req: Request, res: Response) => {
     try {
         console.log('getUsers')
@@ -126,7 +129,7 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
     }
 };
 
-
+// ==================== updateChosenUser ====================
 restaurantController.updateChosenUser = async (req: Request, res: Response) => {
     try {
         console.log('updateChosenUser')
@@ -140,7 +143,7 @@ restaurantController.updateChosenUser = async (req: Request, res: Response) => {
     }
 };
 
-
+// ==================== checkAuthSession ====================
 restaurantController.checkAuthSession = async (
     req: AdminRequest,
     res: Response
@@ -157,7 +160,7 @@ restaurantController.checkAuthSession = async (
     }
 };
 
-
+// ==================== verifyRestaurant ====================
 restaurantController.verifyRestaurant = (
     req: AdminRequest,
     res: Response,
