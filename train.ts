@@ -1,3 +1,27 @@
+// TASK V
+
+// Shunday function yozing, uni string parametri bo'lsin.
+// Va bu function stringdagi har bir harfni o'zi bilan
+// necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.
+
+// yechim
+function countChars(str: string): Record<string, number> {
+    let count: Record<string, number> = {}
+    for (let ele of str) {
+        if (count[ele]) {
+            count[ele]++
+        } else {
+            count[ele] = 1
+        }
+    }
+    return count
+}
+
+
+const result = countChars("hello");
+console.log(result)
+
+
 // TASK U
 
 // Shunday function tuzing, uni number parametri bo'lsin.
@@ -5,21 +29,21 @@
 // oraliqda nechta toq sonlar borligini aniqlab return qilsi.
 
 // yechim:
-function sumOdds(num: number): number {
-    let count = 0;
-    for (let i = 0; i < num; i++) {
-        if (i % 2 !== 0) {
-            count++
-        }
+// function sumOdds(num: number): number {
+//     let count = 0;
+//     for (let i = 0; i < num; i++) {
+//         if (i % 2 !== 0) {
+//             count++
+//         }
 
-    }
-    return count
-}
+//     }
+//     return count
+// }
 
-const result = sumOdds(9);
-const result2 = sumOdds(11);
-console.log(result)
-console.log(result2)
+// const result = sumOdds(9);
+// const result2 = sumOdds(11);
+// console.log(result)
+// console.log(result2)
 
 
 
