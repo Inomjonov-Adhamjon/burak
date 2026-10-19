@@ -21,7 +21,28 @@ $(function () {
         $(".dish-container").slideToggle(300);
         $("#process-btn").css("display", "flex")
     })
-})
+
+    $('.new-product-status').on("change", async function (e) {
+        const id = e.target.id,
+            productStatus = $(`#${id}.new-product-status`).val();
+        try {
+            const response = await axios.post(`/admin/product/${id}`, { productStatus: productStatus });
+            const result = response.data;
+            if (result) {
+                $('.new-product-status').blur();
+            } else {
+                alert('Update failed!');
+            }
+        } catch (err) {
+            console.log(err);
+            alert("Product upadate failed!")
+        }
+    });
+});
+
+
+
+
 function validateForm() {
     const productName = $(".product-name").val();
     const productPrice = $(".product-price").val();
@@ -47,7 +68,6 @@ function validateForm() {
 
 function previewFileHandler(input, order) {
     const imgClassName = input.className;
-    console.log(input)
 
     const file = $(`.${imgClassName}`).get(0).files[0];
     const fileType = file['type'];
