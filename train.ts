@@ -1,3 +1,28 @@
+// TASK W
+
+// Shunday function yozing, u o'ziga parametr sifatida
+// yagona array va number qabul qilsin. Siz tuzgan function
+// arrayni numberda berilgan uzunlikda kesib bo'laklarga
+// ajratgan holatida qaytarsin.
+// MASALAN: chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+// return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
+
+// yechim: 
+function chunkArray(ary: number[], num: number): number[][] {
+    const bloc = [];
+
+    for (let i = 0; i < ary.length; i += num) {
+        bloc.push(ary.slice(i, i + num));
+    }
+    return bloc;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+
+
+
+
 // TASK V
 
 // Shunday function yozing, uni string parametri bo'lsin.
@@ -5,21 +30,21 @@
 // necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.
 
 // yechim
-function countChars(str: string): Record<string, number> {
-    let count: Record<string, number> = {}
-    for (let ele of str) {
-        if (count[ele]) {
-            count[ele]++
-        } else {
-            count[ele] = 1
-        }
-    }
-    return count
-}
+// function countChars(str: string): Record<string, number> {
+//     let count: Record<string, number> = {}
+//     for (let ele of str) {
+//         if (count[ele]) {
+//             count[ele]++
+//         } else {
+//             count[ele] = 1
+//         }
+//     }
+//     return count
+// }
 
 
-const result = countChars("hello");
-console.log(result)
+// const result = countChars("hello");
+// console.log(result)
 
 
 // TASK U
