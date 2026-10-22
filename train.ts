@@ -1,3 +1,33 @@
+// TASK X
+
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
+
+// yechim
+function countOccurrences(obj: Record<string, any>, str: string): number {
+    let count = 0;
+
+    for (let i in obj) {
+        if (i === str) {
+            count++
+        }
+        if (typeof obj[i] === "object" && obj[i] !== null) {
+            count += countOccurrences(obj[i], str)
+
+        };
+
+    };
+
+    return count
+};
+
+
+
+const result = countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model')
+console.log(result)
+
+
 // TASK W
 
 // Shunday function yozing, u o'ziga parametr sifatida
@@ -8,16 +38,16 @@
 // return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
 
 // yechim: 
-function chunkArray(ary: number[], num: number): number[][] {
-    const bloc = [];
+// function chunkArray(ary: number[], num: number): number[][] {
+//     const bloc = [];
 
-    for (let i = 0; i < ary.length; i += num) {
-        bloc.push(ary.slice(i, i + num));
-    }
-    return bloc;
-}
+//     for (let i = 0; i < ary.length; i += num) {
+//         bloc.push(ary.slice(i, i + num));
+//     }
+//     return bloc;
+// }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 
 
