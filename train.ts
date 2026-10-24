@@ -1,3 +1,18 @@
+/* TASK Y
+
+Shunday function yozing, uni 2'ta array parametri bo'lsin.
+Bu function ikkala arrayda ham ishtirok etgan bir xil
+qiymatlarni yagona arrayga joylab qaytarsin. */
+
+// yechim:
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+    return arr1.filter((num) => arr2.includes(num));
+}
+
+const result = findIntersection([1, 2, 3], [3, 2, 0]);
+console.log(result)
+
+
 // TASK X
 
 // Shunday function yozing, uni object va string parametrlari bo'lsin.
@@ -5,27 +20,27 @@
 // necha marotaba takrorlanganlini sanab qaytarsin.
 
 // yechim
-function countOccurrences(obj: Record<string, any>, str: string): number {
-    let count = 0;
+// function countOccurrences(obj: Record<string, any>, str: string): number {
+//     let count = 0;
 
-    for (let i in obj) {
-        if (i === str) {
-            count++
-        }
-        if (typeof obj[i] === "object" && obj[i] !== null) {
-            count += countOccurrences(obj[i], str)
+//     for (let i in obj) {
+//         if (i === str) {
+//             count++
+//         }
+//         if (typeof obj[i] === "object" && obj[i] !== null) {
+//             count += countOccurrences(obj[i], str)
 
-        };
+//         };
 
-    };
+//     };
 
-    return count
-};
+//     return count
+// };
 
 
 
-const result = countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model')
-console.log(result)
+// const result = countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model')
+// console.log(result)
 
 
 // TASK W
