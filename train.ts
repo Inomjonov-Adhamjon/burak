@@ -1,3 +1,24 @@
+// TASK Z
+
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
+
+function sumEvens(arr: number[]): number {
+    let sum = 0;
+    for (let ele of arr) {
+        if (ele % 2 === 0) {
+            sum += ele
+        }
+    }
+    return sum
+}
+
+const result = sumEvens([1, 2, 3]);
+const result2 = sumEvens([1, 2, 3, 2]);
+console.log(result, result2)
+
+
 /* TASK Y
 
 Shunday function yozing, uni 2'ta array parametri bo'lsin.
@@ -5,12 +26,12 @@ Bu function ikkala arrayda ham ishtirok etgan bir xil
 qiymatlarni yagona arrayga joylab qaytarsin. */
 
 // yechim:
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-    return arr1.filter((num) => arr2.includes(num));
-}
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//     return arr1.filter((num) => arr2.includes(num));
+// }
 
-const result = findIntersection([1, 2, 3], [3, 2, 0]);
-console.log(result)
+// const result = findIntersection([1, 2, 3], [3, 2, 0]);
+// console.log(result)
 
 
 // TASK X
