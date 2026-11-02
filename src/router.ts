@@ -8,9 +8,13 @@ router.post('/member/login', memberController.login);
 
 router.post('/member/signup', memberController.signup);
 
-router.post('/member/logout', memberController.verifyAuth, memberController.logout)
+router.post(
+    '/member/logout',
+    memberController.verifyAuth,
+    memberController.logout)
 
-router.get('/member/detail',
+router.get(
+    '/member/detail',
     memberController.verifyAuth,
     memberController.getMemberDetail)
 
@@ -20,6 +24,11 @@ router.post(
     memberController.verifyAuth,
     makeUploader("members").single("memberImage"),
     memberController.updateMember
+)
+
+router.get(
+    '/member/top-users',
+    memberController.getTopUsers
 )
 
 // Products
