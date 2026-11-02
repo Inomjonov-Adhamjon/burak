@@ -4,6 +4,10 @@ import memberController from './controller/member.controller';
 import makeUploader from './libs/utils/uploader';
 // React
 // Member
+router.get(
+    '/member/restaurant',
+    memberController.getRestaurant
+)
 router.post('/member/login', memberController.login);
 
 router.post('/member/signup', memberController.signup);
