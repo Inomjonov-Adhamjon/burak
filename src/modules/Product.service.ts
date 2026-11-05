@@ -6,13 +6,19 @@ import ProductModel from "../schema/Product.model";
 import { T } from "../libs/types/common";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { ObjectId } from "mongoose"
+import ViewService from "./View.service";
+import ViewModel from "../schema/View.model";
+import { ViewInput } from "../libs/types/view";
+import { ViewGroup } from "../libs/enums/View.enum";
 
 
 class ProductService {
     private readonly productModel;
+    public viewService
 
     constructor() {
         this.productModel = ProductModel;
+        this.viewService = new ViewService();
     }
     // ==================== SPA ====================
 
@@ -54,6 +60,33 @@ class ProductService {
         }).exec();
 
         if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND)
+
+
+        if (memberId) {
+
+            // check existance
+            const input: ViewInput = {
+                memberId: memberId,
+                viewRefId: productId,
+                viewGroup: ViewGroup.PRODUCT
+            }
+            const existView = await this.viewService.checkViewExistance(input)
+
+            // insert view
+            if (!existView) {
+                console.log("planning", !!existView)
+                await this.viewService.insertMemberView(input);
+
+                // increase view
+                result = await this.productModel
+                    .findByIdAndUpdate(
+                        productId,
+                        { $inc: { productViews: +1 } },
+                        { new: true }
+                    )
+            }
+            // increase view
+        }
 
         return result
     }
