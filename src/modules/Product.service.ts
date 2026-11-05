@@ -7,9 +7,8 @@ import { T } from "../libs/types/common";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { ObjectId } from "mongoose"
 import ViewService from "./View.service";
-import ViewModel from "../schema/View.model";
 import { ViewInput } from "../libs/types/view";
-import { ViewGroup } from "../libs/enums/View.enum";
+import { ViewGroup } from "../libs/enums/view.enum";
 
 
 class ProductService {
