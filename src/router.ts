@@ -40,5 +40,11 @@ router.get(
 
 router.get('/product/all', productController.getProducts);
 
+router.get(
+    '/product/:id', 
+    memberController.retrieveAuth,
+    productController.getProduct
+)
+
 // Orders
 export default router;
