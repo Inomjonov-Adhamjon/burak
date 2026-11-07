@@ -112,14 +112,13 @@ class OrderService {
             orderId = shapeIntoMongooseObjectId(input.orderId),
             orderStatus = input.orderStatus;
 
-        const result = await OrderModel.findByIdAndUpdate(
-            {
-                memberId: memberId,
-                _id: orderId
-            },
-            { orderStatus: orderStatus },
-            { new: true },
-        ).exec();
+        const result = await this.orderModel
+            .findOneAndUpdate(
+                { memberId: memberId, _id: orderId },
+                { orderStatus: orderStatus },
+                { new: true },
+            )
+            .exec()
         if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
         if (orderStatus === OrderStatus.PROCESS) {
